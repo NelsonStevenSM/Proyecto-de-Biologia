@@ -1,0 +1,2 @@
+./FASTAS/Lockhartia bennettii/ACL80515.1.fasta
+./FASTAS/Masdevallia uniflora/AAQ08342.1.fasta

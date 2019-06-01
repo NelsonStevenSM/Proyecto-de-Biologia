@@ -1,0 +1,15 @@
+./FASTAS/Oncidium ariasii/ACN68748.1.fasta
+./FASTAS/Oncidium tipuloides/ACN68074.1.fasta
+./FASTAS/Macroclinium aurorae/ACN68872.1.fasta
+./FASTAS/Oncidium retusum/ACN68754.1.fasta
+./FASTAS/Oncidium retusum/ACN68750.1.fasta
+./FASTAS/Oncidium retusum/ACN67605.1.fasta
+./FASTAS/Oncidium retusum/ACN68024.1.fasta
+./FASTAS/Lockhartia bennettii/ACN68650.1.fasta
+./FASTAS/Lockhartia bennettii/ACN67546.1.fasta
+./FASTAS/Cyrtochilum villenaorum/ACN68944.1.fasta
+./FASTAS/Cyrtochilum ornatum/ACN68616.1.fasta
+./FASTAS/Rodriguezia chasei/ACN68528.1.fasta
+./FASTAS/Brassia aurorae/ACN68438.1.fasta
+./FASTAS/Telipogon ariasii/ACN68282.1.fasta
+./FASTAS/Rodriguezia delcastilloi/ACN68458.1.fasta

@@ -1,0 +1,8 @@
+./FASTAS/Oncidium retusum/ACN77156.1.fasta
+./FASTAS/Cyrtochilum villenaorum/ACN77827.1.fasta
+./FASTAS/Cyrtochilum villenaorum/ACN77827.1.fasta
+./FASTAS/Cyrtochilum villenaorum/ACN77827.1.fasta
+./FASTAS/Lockhartia bennettii/ACN77129.1.fasta
+./FASTAS/Oncidium retusum/ACN77365.1.fasta
+./FASTAS/Cyrtochilum ornatum/ACN77664.1.fasta
+./FASTAS/Cyrtochilum ornatum/ACN77664.1.fasta

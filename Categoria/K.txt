@@ -1,0 +1,13 @@
+./FASTAS/Cyrtochilum volubile/AOO85417.1.fasta
+./FASTAS/Cyrtochilum volubile/AXL67128.1.fasta
+./FASTAS/Cyrtochilum volubile/AXL67127.1.fasta
+./FASTAS/Oncidium retusum/ACN94275.1.fasta
+./FASTAS/Lepanthes terborchii/ASV53268.1.fasta
+./FASTAS/Lepanthes martineae/ASV53248.1.fasta
+./FASTAS/Maxillaria dillonii /AHB84724.1.fasta
+./FASTAS/Trichosalpinx sijmii/ASV53359.1.fasta
+./FASTAS/Maxillaria dillonii/AHB84724.1.fasta
+./FASTAS/Rodriguezia chasei/ACN94403.1.fasta
+./FASTAS/Lepanthes sijmii/ASV53265.1.fasta
+./FASTAS/Telipogon ariasii/ABC61654.1.fasta
+./FASTAS/Lepanthes cloesii/ASV53217.1.fasta
