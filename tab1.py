@@ -1,3 +1,9 @@
+import matplotlib.pyplot as plt
+from Bio.Phylo.TreeConstruction import DistanceCalculator
+from Bio import Phylo
+from Bio import AlignIO
+from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
+import os
 import sys
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import *
@@ -144,9 +150,27 @@ class Alineamiento(QWidget):
             FileOutput.write("./FASTAS/{}/{}".format(itemList[0],itemList[1]))
 
         FileOutput.close()
-        child = ChildWindow("Arbol Filogenético")
-        self.children.append(child)
+        # Generar todo el fasta a alinear.
+        with open('./output.txt') as f:
+        	for line in f:
+        		path = line.strip('\n').replace(" ","\\ ")
+        		os.system('cat '+path+' >> all.fasta')
+        #
+        #MuscleCommandline
+        os.system('muscle -in all.fasta -clwout tree.aln ')
+        #os.system('subl ./arbol.aln')
+        with open("./tree.aln", "r") as aln:
+            algn = AlignIO.read(aln,"clustal")
+        calculator = DistanceCalculator('identity')
+        dm = calculator.get_distance(algn)
+        constructor = DistanceTreeConstructor(calculator)
+        upgma_tree = constructor.build_tree(algn)
+        Phylo.draw(upgma_tree)
+        os.system('rm all.fasta')
 
+        #child = ChildWindow("Arbol Filogenético")
+        #self.children.append(child)
+	
 if __name__=="__main__":
     App = QApplication(sys.argv)
     window = Alineamiento()
