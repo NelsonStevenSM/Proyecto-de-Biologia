@@ -9,21 +9,6 @@ from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-class ChildWindow(QWidget):
-    def __init__(self, name=None):
-        super(ChildWindow, self).__init__()
-
-        self.name = name
-        self.initUI()
-
-    def initUI(self):
-        btn = QPushButton("%s"%self.name, self)
-        btn.move(30, 50)
-
-        self.setGeometry(300, 300, 250, 180)
-        self.setWindowTitle("Árbol Filogenético")
-        self.show()
-
 class listado(QWidget):
     def __init__(self,parent):
         super().__init__(parent)
@@ -44,17 +29,18 @@ class btns(QWidget):
         self.clear = QPushButton("Clear",self)
         self.delete = QPushButton("Delete",self)
         self.generate = QPushButton("Generate",self)
+        self.inicio = QPushButton("Inicio",self)
         
         vbox.addWidget(self.clear)
         vbox.addWidget(self.delete)
         vbox.addWidget(self.generate)
+        vbox.addWidget(self.inicio)
 
         self.setLayout(vbox)
 
 class Alineamiento(QWidget):
     def __init__(self):
         super(Alineamiento, self).__init__()
-        self.children =[]
         self.title = "Alineamiento"
         self.left = 100
         self.top = 100
@@ -142,6 +128,7 @@ class Alineamiento(QWidget):
     def clear(self):
         self.listaB.lista.setHidden(True)
         self.listaB.lista.clear()
+        os.system('rm all.fasta ')
 
     def generate(self):
         FileOutput = open("./output.txt",'w')
@@ -158,7 +145,6 @@ class Alineamiento(QWidget):
         #
         #MuscleCommandline
         os.system('muscle -in all.fasta -clwout tree.aln ')
-        #os.system('subl ./arbol.aln')
         with open("./tree.aln", "r") as aln:
             algn = AlignIO.read(aln,"clustal")
         calculator = DistanceCalculator('identity')
@@ -166,12 +152,9 @@ class Alineamiento(QWidget):
         constructor = DistanceTreeConstructor(calculator)
         upgma_tree = constructor.build_tree(algn)
         Phylo.draw(upgma_tree)
-        os.system('rm all.fasta')
 
-        #child = ChildWindow("Arbol Filogenético")
-        #self.children.append(child)
 	
 if __name__=="__main__":
     App = QApplication(sys.argv)
-    window = Alineamiento()
+    alineamiento = Alineamiento()
     sys.exit(App.exec())

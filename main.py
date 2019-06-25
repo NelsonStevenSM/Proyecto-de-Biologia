@@ -3,7 +3,9 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
 import os.path
-from tab1 import *
+from Selector import *
+from Picture import *
+
 class Window(QMainWindow):
     def __init__(self):
         super(Window, self).__init__()
@@ -22,9 +24,9 @@ class Window(QMainWindow):
         self.setGeometry(self.top, self.left, self.width, self.height)
 
         # Creando Layot Padre 
-        wid = QWidget(self)
+        self.wid = QWidget(self)
 
-        self.setCentralWidget(wid)
+        self.setCentralWidget(self.wid)
 
         # Layout
         LGeneral = QVBoxLayout()
@@ -62,7 +64,7 @@ class Window(QMainWindow):
         self.tree.setStyleSheet("background-color: transparent;")
         self.tree.resize(90, 90)
         self.tree.setCursor(QCursor(Qt.PointingHandCursor))
-#        self.tree.mousePressEvent = self.clickTree
+        self.tree.mousePressEvent = self.clickTree
 
         self.help = QLabel("", self)
         self.help.move(403, 182)
@@ -81,18 +83,25 @@ class Window(QMainWindow):
         LDescriptor.addWidget(Descrip)
         LDescriptor.addWidget(bizagi)
         LGeneral.addLayout(LDescriptor)
-        wid.setLayout(LGeneral)
+        self.wid.setLayout(LGeneral)
 
         self.show()
 
+    def clickTree(self, event):
+        self.principle = Image()
+        self.setCentralWidget(self.principle)
+        self.principle.btn.inicio.clicked.connect(self.devolver)
+
     def clickConfig(self, event):
-        Alineamiento()
-        print("nelson")
+        self.principle = Alineamiento()
+        self.setCentralWidget(self.principle)
+        self.principle.btn.inicio.clicked.connect(self.devolver)
+
+    def devolver(self):
+        self.setCentralWidget(Window())
 
 if __name__ =="__main__":
-
     import sys
     app = QApplication(sys.argv)
-    window = Window()
-
-    sys.exit(app.exec_())
+    main = Window()
+    sys.exit(app.exec())

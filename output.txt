@@ -1,0 +1,3 @@
+./FASTAS/Oncidium ariasii/ACN77730.1.fasta
+./FASTAS/Oncidium retusum/ACN77733.1.fasta
+./FASTAS/Lockhartia bennettii/ACN77681.1.fasta
