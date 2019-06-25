@@ -1,3 +1,4 @@
-./FASTAS/Oncidium ariasii/ACN77730.1.fasta
-./FASTAS/Oncidium retusum/ACN77733.1.fasta
+./FASTAS/Oncidium retusum/ACN77156.1.fasta
 ./FASTAS/Lockhartia bennettii/ACN77681.1.fasta
+./FASTAS/Macroclinium aurorae/ACN77792.1.fasta
+./FASTAS/Cyrtochilum villenaorum/ACN77827.1.fasta

@@ -5,6 +5,8 @@ from PyQt5.QtCore import Qt
 import os.path
 from Selector import *
 from Picture import *
+from Informe import *
+from Help import *
 
 class Window(QMainWindow):
     def __init__(self):
@@ -15,6 +17,7 @@ class Window(QMainWindow):
         self.left = 100
         self.width = 500
         self.height = 300
+        #self.statusBar().showMessage("Sanabio & Serrano")
         self.InitWindow()
 
     def InitWindow(self):
@@ -52,12 +55,12 @@ class Window(QMainWindow):
         self.config.setCursor(QCursor(Qt.PointingHandCursor))
         self.config.mousePressEvent = self.clickConfig
 
-        self.choose = QLabel("", self)
-        self.choose.move(292, 310)
-        self.choose.setStyleSheet("background-color: transparent;")
-        self.choose.resize(90, 90)
-        self.choose.setCursor(QCursor(Qt.PointingHandCursor))
-#        self.choose.mousePressEvent = self.clickChoose
+        self.inform = QLabel("", self)
+        self.inform.move(292, 310)
+        self.inform.setStyleSheet("background-color: transparent;")
+        self.inform.resize(90, 90)
+        self.inform.setCursor(QCursor(Qt.PointingHandCursor))
+        self.inform.mousePressEvent = self.clickInform
 
         self.tree = QLabel("", self)
         self.tree.move(553, 255)
@@ -71,7 +74,7 @@ class Window(QMainWindow):
         self.help.setStyleSheet("background-color: transparent;")
         self.help.resize(60, 60)
         self.help.setCursor(QCursor(Qt.PointingHandCursor))
-#        self.help.mousePressEvent = self.clickHelp
+        self.help.mousePressEvent = self.clickHelp
 
         self.map = QLabel("", self)
         self.map.move(215, 179)
@@ -96,6 +99,16 @@ class Window(QMainWindow):
         self.principle = Alineamiento()
         self.setCentralWidget(self.principle)
         self.principle.btn.inicio.clicked.connect(self.devolver)
+
+    def clickInform(self, event):
+        self.principle_mid = Informe()
+        self.setCentralWidget(self.principle_mid)
+        self.principle_mid.inicio.clicked.connect(self.devolver)
+
+    def clickHelp(self, event):
+        self.principle_mid = Help()
+        self.setCentralWidget(self.principle_mid)
+        self.principle_mid.inicio.clicked.connect(self.devolver)
 
     def devolver(self):
         self.setCentralWidget(Window())
