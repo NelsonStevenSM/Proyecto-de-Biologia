@@ -1,0 +1,88 @@
+body{
+    background-color: #7b818c;
+	background-attachment: fixed;
+}
+
+.mapdiv{
+    width:500px;
+    margin: auto;
+}
+
+.mapdiv path {
+    fill: #7aa378;
+    stroke: #1d421b;
+    stroke-width:4px;
+    transition: fill 0.3s;
+}
+
+.mapdiv .rdep:hover {
+    fill:#598761;
+}
+@import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alef&display=swap');
+
+.popup{
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.popup:target {
+	display: initial;
+	  -webkit-animation: fadeIn 1s;
+}
+.orchid-card{
+  display: inline-block;
+  font-size: 24px;
+  width: 20em;
+  height: 7em;
+  margin-top: 20px;
+  margin-bottom:20px;
+  margin-right: 20px;
+  padding: 20px;
+  border: 4px solid #cecece;
+  background-color: #f2f4f7;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 2em;
+}
+.orchid-card:hover{
+  border: 4px solid #7da58a;
+  box-shadow: 0 0 5px 1px;
+}
+a {
+  color: black;
+}
+img {
+  width: 100px;
+  height: 75px;
+  border: 2.5px solid #ddd;
+  border-radius: 4px;
+}
+h5 {
+  font-family: 'Viga', sans-serif;
+  text-align: center;
+  color: #3a704b;
+  margin-top: 0px;
+
+}
+.cls1 {
+  width: 120px;
+  display: inline-block;
+  padding-left: 30px;
+}
+.cls2 {
+  font-family: 'Alef', sans-serif;
+  width: 300px;
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
